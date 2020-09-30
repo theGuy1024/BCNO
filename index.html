@@ -1,0 +1,88 @@
+<!--CMPS3141-HCI - AS2
+Collaborators:
+Date:
+ -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://get.mavo.io/mavo.css" />
+		<script src="https://get.mavo.io/mavo.js"></script>
+		<title>Box Shadow Demo</title>
+	</head>
+	<body mv-app="boxShadowDemo">
+		<section>
+			<h1>BOX SHADOWS <span>- Are we ready to learn?<span></h1>
+			<!--= = = MAIN BOX = = =-->
+			<div class="box" id="slide">
+				<br>
+				<ul>
+					<li>Move the sliders to get to know about box-shadows</li>
+					<li>Color coded for quick comprehension</li>
+					<li>It can be added to: section, articles, div, span, etc...</li>
+					<li>You can combine more that one shadow an object using ","</li>
+					<li>like: "2px 2px 9px 0 grey, inset -6px -6px 20px 0 white;"</li>
+				</ul>
+
+				<!--= = = Slider area = = =-->
+				<div class="nestBox">
+					<table>
+						<tr>
+							<th class="red">shadow x-axis:</th>
+							<td><input type="range" min="-50" max="50" property="boxX" value="5"></td>
+							<td>[boxX]</td>
+						</tr>
+						<tr>
+							<th class="green">shadow y-axis:</th>
+							<td><input type="range" min="-50" max="50" property="boxY" value="5"></td>
+							<td>[boxY]</td>
+						</tr>
+						<tr>
+							<th class="blue">shadow blur:</th>
+							<td><input type="range" min="0" max="50" property="boxB" value="5"></td>
+							<td>[boxB]</td>
+						</tr>
+						<tr>
+							<th class="purple">shadow radius:</th>
+							<td><input type="range" min="0" max="50" property="boxR" value="0"></td>
+							<td>[boxR]</td></tr>
+					</table>
+				</div>
+				<!--= = = Shadow position = = =-->
+				<div class="nestBox">
+					<h2>Shadow Position</h2>					
+					<span>
+						<label for="normal">outside</label>
+						<input type="radio" id="normal" name="placement" checked  property="" value="">
+					</span>
+					<br>
+					<span>
+						<label for="inside">inside</label>
+						<input type="radio" id="inside" name="placement" value="inset">
+					</span>
+				</div>
+			</div>
+			
+			<!--= = = Preview area = = =-->
+			<div class="box" id="prev">
+				<h2>Preview:</h2>
+				<div class="demoBox"
+					style="box-shadow: [placement] [boxX]px [boxY]px [boxB]px [boxR]px black">
+					<div class="insideDemo">
+						<!--= = = CSS output area = = =-->
+						<h2>
+							<span >"box-shadow: [placement]</span><br>
+							<span class="red">[boxX]px</span> 
+							<span class="green">[boxY]px</span> 
+							<span class="blue">[boxB]px</span> 
+							<span class="purple">[boxR]px</span> 
+							<span>black"</span>
+						</h2>
+					</div>
+				</div>
+			</div>
+			~1024 Design~
+		</section>
+	</body>
+</html>
