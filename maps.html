@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCNO - Map</title>
+    <link rel="stylesheet" href="config/loader.css">    <!--links to the loader style only-->
+    <link rel="stylesheet" href="config/styles.css">    <!--links to the rest of the styles-->
+    <link rel="stylesheet" href="config/mapStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body id="mainFrame" onload="initializeSite('map')">   <!--when the site loads, it calls the function to check if a language has been selected-->
+    <!--cookie form-->
+    <div id="cookieForm">
+        <div id="topDisplay">
+            <img src="media/BCNO_logo.png">
+        </div>
+        <div id="selectLangContainer">
+            <div class="innerContainer">
+                <h2>- Select Your Language:</h2>
+                <h2>- Elige tu idioma:</h2>
+                <h2>- Elige a t'aano':</h2><br><br>
+                <button id="englishOpt" onclick="setEnglish('map')">English &#x2794;</button>
+                <button id="spanishOpt" onclick="setSpanish('map')">Español &#x2794;</button>
+                <button id="mayaOpt" onclick="setMaya('map')">Maya &#x2794;</button>
+            </div>
+        </div>
+        <div id="messageContainer">
+            <div class="innerContainerR">
+                <h2>Keeping you<br>Safe & Informed</h2>
+                <p>Get Knowing</p>
+                <h2>Manteniéndote<br> Seguro e Informado</h2>
+                <p>llega a conocer</p>
+                <h2>Mantener<br>A Salvo & Informado</h2>
+                <p>llega a conocer</p>
+            </div>
+        </div>
+    </div>
+
+    <!--main body-->
+    <div id="bodyContent">
+        <nav id="sideNav"><!--navigation bar-->
+            <div class="insideContainer">
+                <img id="logo" src="media/BCNO_logo.png">
+                <a href="index.html" id="commonNavTag1">NEWS</a>
+                <a href="maps.html" class="active" id="commonNavTag2">MAP</a>
+                <a href="sources.html" id="commonNavTag3">SOURCES</a>
+                <br>
+                <p id="mapLabel1">Results of:</p>
+                <ul>
+                    <label class="switch">
+                        <input type="checkbox" checked id="dailyBtn" onclick="toggleDailyStats()">
+                        <span class="slider">on off</span>
+                    </label><span id="mapLabel2">Today:</span><br><br>
+                    <label class="switch">
+                        <input type="checkbox" checked id="totalBtn" onclick="toggleTotalStats()">
+                        <span class="slider">on off</span>
+                    </label><span id="mapLabel3">Total:</span>
+                </ul>
+                <div class="innerCookie">
+                    <p id="commonNavTag4">Language Options</p>
+                    <button onclick="removeSelection()" class="languageButton" id="commonNavTag5">Remove Selection</button><br>
+                    <button onclick="changeLanguage()" class="languageButton" id="commonNavTag6">Change Language</button>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="openNav()">
+                    <img class="smallimg" id="hiddenMenu" src="media/moreIcon.png">
+                </a>
+            </div>
+        </nav>
+
+        <div id="contentArea"><!--map-->
+            <div id="mapDisplay">
+                <p class="topLine" id="mapText1">Select a District to see its statistics:</p>
+                <div id="districts">
+                    <img src="media/Country.png" alt="Workplace" usemap="#workmap" height="600" id="countryImg">
+                    <map name="workmap">
+                        <area href="#" shape="poly" coords="139,56, 159,5, 210,5, 210,32, 255,32, 249,128, 220,128" onclick="czlClicked()">
+                        <area href="#" shape="poly" coords="139,56, 220,128, 152,149, 136,247, 19,280, 19,138, 46,119, 81,141" onclick="owClicked()">
+                        <area href="#" shape="poly" coords="220,128, 152,149, 136,247, 150,240, 150,318, 205,315, 218,244, 234,240, 234,229, 221,229, 210,210, 226,183, 240,128" onclick="bzClicked()">
+                        <area href="#" shape="poly" coords="136,247, 150,240, 150,318, 157,337, 86,443, 11,470, 19,280" onclick="cyClicked()">
+                        <area href="#" shape="poly" coords="150,318, 157,337, 106,411, 145,415, 157,415, 194,456, 226,358, 205,315" onclick="scClicked()">
+                        <area href="#" shape="poly" coords="106,411, 145,415, 157,415, 194,456, 148,523, 142,502, 69,589, 77,605, 5,605, 11,470, 86,443, " onclick="tdClicked()">
+                    </map>
+                </div>
+            </div>
+            <div id="mapStats">
+                <div class="statsInnerContainer">
+                    <p class="topLine"><span id="mapText2">Statistics for:</span><span id="district"> District</span></p>
+                    <table id="districtTable">
+                        <tr>
+                            <td></td>
+                            <td id="mapText3">Today</td>
+                            <td id="mapText4">Grand Total</td>
+                        </tr>
+                        <tr>
+                            <td id="mapText5">Cases</td>
+                            <td id="districtCases"> </td>
+                            <td id="totaldistrictCases"> </td>
+                        </tr>
+                        <tr>
+                            <td id="mapText6">Deaths</td>
+                            <!--1024-->
+                            <td id="districtDeaths"> </td>
+                            <td id="totaldistrictDeaths"> </td>
+                        </tr>
+                        <tr>
+                            <td id="mapText7">Recovered</td>
+                            <td id="districtRecovered"></td>
+                            <td id="totaldistrictRecovered"> </td>
+                        </tr>
+                        <tr>
+                            <td id="mapText8">Active</td>
+                            <td id="districtActive"></td>
+                            <td id="totaldistrictActive"> </td>
+                        </tr>
+                    </table>
+
+                    <p class="topLine" id="mapText9">Statistics for the country</p>
+                    <table id="countryTable">
+                        <tr>
+                            <td></td>
+                            <td id="mapText10">Today</td>
+                            <td id="mapText11">Grand Total</td>
+                        </tr>
+                        <tr>
+                            <td id="mapText12">Cases</td>
+                            <td id="countryCases"></td>
+                            <td id="totalcountryCases"> </td>
+                        </tr>
+                        <tr>
+                            <td id="mapText13">Deaths</td>
+                            <td id="countryDeaths"></td>
+                            <td id="totalcountryDeaths"> </td>
+                        </tr>
+                        <tr>
+                            <td id="mapText14">Recovered</td>
+                            <td id="countryRecovered"></td>
+                            <td id="totalcountryRecovered"> </td>
+                        </tr>
+                        <tr>
+                            <td id="mapText15">Active</td>
+                            <td id="countryActive"></td>
+                            <td id="totalcountryActive"> </td>
+                        </tr>
+                    </table>
+                </div>
+                <button onclick="window.print()" id="mapText16"><img src="media/printIcon.png">Print Statistics</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHONE SIZE NAV -->
+    <div id="fullNav" class="overlay">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content">
+            <img id="logo" src="media/BCNO_logo.png">
+            <a href="index.html" id="commonNavTag1">NEWS</a>
+            <a href="maps.html" class="active" id="commonNavTag2">MAP</a>
+            <a href="sources.html" id="commonNavTag3">SOURCES</a>
+            <br>
+            <div class="innerCookie">
+                <p id="commonNavTag4">Language Options</p>
+                <button onclick="removeSelection()" class="languageButton" id="commonNavTag5">Remove Selection</button><br>
+                <button onclick="changeLanguage()" class="languageButton" id="commonNavTag6">Change Language</button>
+            </div>
+		 </div>
+	</div>
+</body>
+<!-- JAVASCRIPT -->
+<script src="config/map.js"> </script>
+<script src="config/loader-language.js"></script>
+</html>

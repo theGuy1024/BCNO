@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCNO - home</title>
+    <link rel="stylesheet" href="config/loader.css">    <!--links to the loader style only-->
+    <link rel="stylesheet" href="config/styles.css">    <!--links to the rest of the styles-->
+    <link rel="stylesheet" href="config/articleStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body id="mainFrame"  onload="initializeSite('home')">   <!--when the site loads, it calls the function to show preloader-->
+    <!--cookie form - calls the JS to set the language and change the words-->
+    <div id="cookieForm">
+        <div id="topDisplay">
+            <img src="media/BCNO_logo.png">
+        </div>
+        <div id="selectLangContainer">
+            <div class="innerContainer">
+                <h2>- Select Your Language:</h2>
+                <h2>- Elige tu idioma:</h2>
+                <h2>- Elige a t'aano':</h2><br><br>
+                <button id="englishOpt" onclick="setEnglish('map')">English &#x2794;</button>
+                <button id="spanishOpt" onclick="setSpanish('map')">Español &#x2794;</button>
+                <button id="mayaOpt" onclick="setMaya('map')">Maya &#x2794;</button>
+            </div>
+        </div>
+        <div id="messageContainer">
+            <div class="innerContainerR">
+                <h2>Keeping you<br>Safe & Informed</h2>
+                <p>Get Knowing</p>
+                <h2>Manteniéndote<br> Seguro e Informado</h2>
+                <p>llega a conocer</p>
+                <h2>Mantener<br>A Salvo & Informado</h2>
+                <p>llega a conocer</p>
+            </div>
+        </div>
+    </div>
+    
+    <!--main body-->
+    <div id="bodyContent">
+        <!--SIDE NAV STARTS-->
+        <nav id="topNav"><!--navigation bar-->
+            <button id="backLabel" onclick="location.href='index.html'">Back to <br>News Page</button>
+            <img src="media/BCNO_logo.png" width="200">
+        </nav>
+        <!--SIDE NAV ENDS-->
+
+        <!--ARTICLE START-->
+        <article>
+            <div id="leftDivision">
+                <img src="media/news/MarvinManzanero.jpg">
+                <audio controls>
+                    <source src="horse.ogg" type="audio/ogg">
+                </audio>
+                <div class="buttonContainer">
+                    <button id="readLabel" onclick="location.href='https://edition.channel5belize.com/archives/212615'">Read Article</button>
+                    <button id="printLabel" onclick="window.print()">Print Article</button>
+                </div>
+            </div>
+            <div id="bulletPoints">
+                <h2 id="headLine">Dr. Marvin Manzanero test positive to COVID</h2>
+                <div class="block">
+                    <div class="numbering">1</div>
+                    <p id="line1">On Friday, he started with minor symptoms like throat itchiness </p>
+                </div>
+                <div class="block">
+                    <div class="numbering">2</div>
+                    <p id="line2">Monday he got tested</p>
+                </div>
+                <div class="block">
+                    <div class="numbering">3</div>
+                    <p id="line3">On Tuesday the 8, result came showing positive for COVID</p>
+                </div>
+                <div class="block">
+                    <div class="numbering">4</div>
+                    <p id="line4">He advises the people to never let down your guard</p>
+                </div>
+                <br><br>
+            </div>
+        </article>
+        <!--ARTICLE END-->
+    </div>
+</body>
+<!-- JAVASCRIPT -->
+<script src="config/loader-language.js"></script>
+<script src="config/newArticle.js"></script>
+</html>

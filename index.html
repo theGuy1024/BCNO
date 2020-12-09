@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCNO - home</title>
+    <link rel="stylesheet" href="config/loader.css">    <!--links to the loader style only-->
+    <link rel="stylesheet" href="config/styles.css">    <!--links to the rest of the styles-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body id="mainFrame"  onload="initializeSite('home')">   <!--when the site loads, it calls the function to show preloader-->
+
+    <!--screen loader-->
+    <div id="screenLoader">
+        <div id="characterPopUp">
+            <img src="media/male.png" alt="male">
+            <img src="media/female.png" alt="female">
+        </div>
+        <div id="textPopUp">
+            <h2 id="h2-1">Wear A Mask</h2>
+            <h2 id="h2-2">Keep your Distance</h2>
+            <h2 id="h2-3">Wash your Hands</h2>
+        </div>
+    </div>
+
+    <!--cookie form - calls the JS to set the language and change the words-->
+    <div id="cookieForm">
+        <div id="topDisplay">
+            <img src="media/BCNO_logo.png">
+        </div>
+        <div id="selectLangContainer">
+            <div class="innerContainer">
+                <h2>- Select Your Language:</h2>
+                <h2>- Elige tu idioma:</h2>
+                <h2>- Elige a t'aano':</h2><br><br>
+                <button id="englishOpt" onclick="setEnglish('map')">English &#x2794;</button>
+                <button id="spanishOpt" onclick="setSpanish('map')">Español &#x2794;</button>
+                <button id="mayaOpt" onclick="setMaya('map')">Maya &#x2794;</button>
+            </div>
+        </div>
+        <div id="messageContainer">
+            <div class="innerContainerR">
+                <h2>Keeping you<br>Safe & Informed</h2>
+                <p>Get Knowing</p>
+                <h2>Manteniéndote<br> Seguro e Informado</h2>
+                <p>llega a conocer</p>
+                <h2>Mantener<br>A Salvo & Informado</h2>
+                <p>llega a conocer</p>
+            </div>
+        </div>
+    </div>
+    
+    <!--main body-->
+    <div id="bodyContent">
+        <nav id="sideNav"><!--navigation bar-->
+            <div class="insideContainer">
+                <img id="logo" src="media/BCNO_logo.png">
+                <a href="index.html" class="active" id="commonNavTag1">NEWS</a>
+                <a href="maps.html" id="commonNavTag2">MAP</a>
+                <a href="sources.html" id="commonNavTag3">SOURCES</a>
+                <br>
+                <p id="homeNavTag1">Categories</p>
+                <ul>
+                    <li><a href="" id="homeNavTag2">Popular & current</a></li>
+                    <li><a href="" id="homeNavTag3">Statutory Instrument</a></li>
+                    <li><a href="" id="homeNavTag4">Mental Health</a></li>
+                    <li><a href="" id="homeNavTag5">Prevention</a></li>
+                </ul>
+                <div class="innerCookie">
+                    <p id="commonNavTag4">Language Options</p>
+                    <button onclick="removeSelection()" class="languageButton" id="commonNavTag5">Remove Selection</button><br>
+                    <button onclick="changeLanguage()" class="languageButton" id="commonNavTag6">Change Language</button>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="openNav()">
+                    <img class="smallimg" id="hiddenMenu" src="media/moreIcon.png">
+                </a>
+            </div>
+        </nav>
+        <div id="topSearch">
+            <input type="text" id="searchBX" placeholder="Search topic...">
+        </div>
+        <!--NEWS ARTICLES START-->
+        <div class="mainNewsContainer" id="newsBodyContainer">
+            <h2 id="newsWording">Most Popular & Latest</h2>
+            <div class="highlight" onclick="location.href='article.html'">
+                <img src="media/news/MarvinManzanero.jpg">  
+                <h3 id="newsTitle1">Dr. Marvin Manzanero test positive to COVID</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/borderReopening.png">
+                <h3 id="newsTitle2">Reopening of Corozal Freezone, measures to prevent spread of COVID.</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/DVega.jpeg">
+                <h3 id="newsTitle3">Hon. Dido Vega taken for urgent medical attention to Belize City</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/newRules.png">
+                <h3 id="newsTitle4">Belize implements new COVID control measures</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/death.png">
+                <h3 id="newsTitle5">New Record of new cases in Belize</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/JBriceno.png">
+                <h3 id="newsTitle6">Prime Minister Johnny Briceño tests positive for COVID</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/election day.jpg">
+                <h3 id="newsTitle7">Wreckless act, elections could cause mass COVID spread</h3>
+            </div>
+            <div class="newsArticle">
+                <img src="media/news/popular news.png">
+                <h3 id="newsTitle8">There has been a surge of Covid 19 cases within 16 different farms in the south of Belize.</h3>
+            </div>
+        </div>
+        <!--NEWS ARTICLES END-->
+    </div>
+
+    <!-- PHONE SIZE NAV -->
+    <div id="fullNav" class="overlay">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><!--close button-->
+		<div class="overlay-content"><!--main container-->
+            <img id="logo" src="media/BCNO_logo.png">
+            <a href="index.html" id="commonNavTag1">NEWS</a><!--Tag-->
+            <a href="maps.html" class="active" id="commonNavTag2">MAP</a>
+            <a href="sources.html" id="commonNavTag3">SOURCES</a>
+            <br>
+            <div class="innerCookie"><!--language selection area-->
+                <p id="commonNavTag4">Language Options</p>
+                <button onclick="removeSelection()" class="languageButton" id="commonNavTag5">Remove Selection</button><br>
+                <button onclick="changeLanguage()" class="languageButton" id="commonNavTag6">Change Language</button>
+            </div>
+		 </div>
+    </div>
+</body>
+<!-- JAVASCRIPT -->
+<script src="config/loader-language.js"></script>
+</html>
