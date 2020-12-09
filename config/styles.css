@@ -338,7 +338,7 @@
     width: 65%;
     height: 90%;
     border-radius: 10px 10px 0 0;
-    background-color: red;
+    background-color: #f0f0f7;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -351,31 +351,57 @@
 }
 
 #bodyContent .mainNewsContainer .highlight{
-    width: 60%;
-    height: 45%;
-    margin: 8px;
-    display: inline-block;
-    overflow: hidden;
-    background-color: black;
-}
-
-#bodyContent .mainNewsContainer .newsArticle{
-    width: 30%;
-    height: 45%;
+    width: 62%;
+    height: 55%;
     margin: 8px;
     display: inline-block;
     overflow: hidden;
     transition: 0.3s;
-    background-color: black;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: white;
 }
 
-#bodyContent .mainNewsContainer .newsArticle img{
+#bodyContent .mainNewsContainer .highlight h3{
+    position: relative;
+    bottom: 40%;
+    width: 100%;
     height: 25%;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.5);;
+}
+
+#bodyContent .mainNewsContainer .newsArticle{
+    width: 30%;
+    height: 55%;
+    margin: 8px;
+    display: inline-block;
+    overflow: hidden;
+    transition: 0.3s;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+#bodyContent .mainNewsContainer .newsArticle h3{
+    width: 88%;
+    height: 40%;
+    margin: 5%;
+}
+
+.newsArticle img, .highlight img{
+    width: 100%;
 }
 
 #bodyContent .mainNewsContainer .newsArticle:hover{
     width: 32%;
-    height: 47%;
+    height: 57%;
+    margin: 0;
+}
+
+#bodyContent .mainNewsContainer .highlight:hover{
+    width: 64%;
+    height: 57%;
     margin: 0;
 }
 
