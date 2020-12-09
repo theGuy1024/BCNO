@@ -1,0 +1,90 @@
+*:before,*:after{
+	box-sizing: border-box;
+}
+*{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#screenLoader{              /*sets up the preloader - the main "panel"*/
+    font-family: 'Courgette', cursive;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100vh;
+    background-image: linear-gradient(white 25%, #9ef5fd 50%, #00A1AF 74%);
+	transition: all 1s ease-out;	
+	z-index: 1001;
+}
+
+/*CHARACTERS*/
+#characterPopUp{            /*centers the area of the characters that will pop up*/
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 250px;
+    border-bottom: 2px solid white;
+    transition: all 0.7s ease-out;
+    overflow: hidden;
+}
+
+#characterPopUp.expand{
+    width: 550px;
+}
+
+#characterPopUp img{        /*gives the characters/images moving properties and size*/
+    position: relative;
+    top: 0;
+    width: 150px;
+    transition: all 1s ease-out;
+}
+
+#characterPopUp img:nth-child(1){   /*makes the first character/image out of sight and away from the second*/
+    top: 100%;
+    margin-right: 40%;
+}
+
+#characterPopUp img:nth-child(2){   /*makes the second character/image out of sight*/
+	top: 100%;
+}
+
+#characterPopUp.move img:nth-child(1){      /*called by the javascript, it makes the first character/image*/
+	top: 0%;                                /*move to where it can be seen*/
+}
+
+div #characterPopUp.move img:nth-child(2){  /*called by the javascript, it makes the second character/image*/
+	top: 0%;                                /*move to where it can be seen*/
+}
+/*TEXT*/
+#textPopUp{                                 /*centers the displayed text area*/
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    width: 550px;
+    height: 139px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#textPopUp h2{                              /*beautifies the h2 of the text area, and places it out of sight*/
+    bottom: 100%;
+    font-size: 1.75em;
+    letter-spacing: 1px;
+    padding-bottom: 2%;
+    transition: all 1s ease-out;
+}
+
+#textPopUp.lower h2{                        /*makes the text lower, to be seen*/
+    bottom: 0%;
+}
+
+.pageLoaded #screenLoader{                  /*hides the loader panel*/
+	opacity: 0;
+	visibility: hidden;
+}

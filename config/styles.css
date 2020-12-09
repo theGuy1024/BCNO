@@ -1,0 +1,513 @@
+/* ----------------------------------LANGUAGE SELECTION FORM---------------------------------- */
+/*Language Selection form properties*/
+#cookieForm{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background-color: white;
+    transition: all 1s;
+    z-index: -1;
+    /*display: none;*/
+}
+
+/*hides the form, making the main body visible*/
+#cookieForm.showForm{ 
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    z-index: 1000;
+}
+
+/* - - - - - -T O P- - - - - - */
+/*holds the logo and other icons*/
+#topDisplay{
+    width: 100vw;
+    height: 10vh;
+    border-bottom: 1px solid gray;
+}
+
+/*locates/places the logo*/
+#topDisplay img{
+    height: 8vh;
+    margin-top: 1vh;
+    margin-left: 50px;
+}
+
+/* < < < < < LEFT DIVISION < < < < <  */
+/*divides the whole form into 2 sections*/
+#selectLangContainer{
+    text-align: center;
+    width: 48vw;
+    float:left;
+    overflow: hidden;
+}
+
+/*inner container, centers the language selection frame*/
+.innerContainer{
+    margin-top: 15%;
+    margin-left: 20%;
+    width: 60%;
+    border-radius: 20px;
+    overflow: hidden
+}
+/* adds style to the "Select Your Language" phrase*/
+#selectLangContainer h2{
+    color: #093B93;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    padding-top: 2%;
+    margin-bottom: 5x;
+}
+
+/*adds a line at the bottom of the phrase "Elige a t'aano':"*/
+#selectLangContainer h2:nth-child(3){
+    border-bottom: 1px solid gray;
+}
+
+/*COOKIE FORM BUTTONS*/
+/*makes buttons of the form ONLY bigger and centered on the inner container*/
+#cookieForm button{
+    background-color: #E04D3E;
+    border-radius: 30px;
+    width: 180px;
+    height: 55px;
+    color: white;
+
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 30%;
+
+	text-align: center;
+    font-size: 1.2em;
+    transition: 0.4s;
+}
+
+/*button hover effect - color change and size increase*/
+#cookieForm button:hover{
+    color: #093B93;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+/* > > > > > R I G H T > > > > > */
+/*the other half of the division, holds the phrase "Keeping you Safe & Informed" and "Get Knowing"*/
+#messageContainer{
+    margin-top: 3%;
+    display: inline-block;
+    width: 48vw;
+    overflow: hidden;
+    text-align: center;
+}
+/*styles the h2 only*/
+#messageContainer h2{
+    font-family: 'Poppins', sans-serif;
+    color:  #093B93;
+    font-size: 2.1em;
+    margin-bottom: 15px;
+}
+/*makes the p bigger, adds color and changes font style*/
+#messageContainer p{
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(58, 56, 56);
+    border-bottom: 1px solid gray;
+    margin-bottom: 25px;
+}
+/*centers the text*/
+.innerContainerR{
+    margin-top: 0;
+    /*1024*/
+    margin-left: 10%;
+    width: 60%;
+}
+
+/* ----------------------------------MAIN BODY CONTENT---------------------------------- */
+/*makes the body locked to the user's screen size*/
+#bodyContent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*makes the buttons to select language wider*/
+.languageButton{
+    background-color: rgb(206, 206, 206);
+    padding: 5px;
+    border: 0px;
+    font-size: 1.1em;
+    height: 5%;
+}
+
+/* ----------------------------------PHONE OVERLAY NAV BAR---------------------------------- */ 
+/*makes the overlay over the entire screen with a black transparent background - IT'S HIDDEN*/
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 995;
+    top: 0;
+    left: 0;
+    background-color: 	rgba(0,0,0, 0.8);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  /*centers the content inside*/
+  .overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  /*makes the anchors bigger*/
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 2em;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  /*when the a tag gets hovered, color changes and the letters space out making it visible*/
+  .overlay a:hover, .overlay a:focus {
+    color: #bbbbbb;
+    letter-spacing: 2px;
+  }
+  /*places the close button to the top right side and adds a size*/
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    width: 5vh;
+    height:	5vh;
+  }
+  /*makes the word "Language Options" white and big*/
+  #fullNav #commonNavTag4{
+      color: white;
+      font-size: 2em;
+  }
+  /*makes the button black and white font*/
+  #fullNav .languageButton{
+      background-color: black;
+      color: white;
+      font-size: 1.1em;
+      height: 5%;
+      border: 1px solid white;
+  }
+
+/* ----------------------------------SIDE NAVIGATION BAR---------------------------------- */
+/*makes the hamburger icon hidden*/
+#sideNav .insideContainer .icon{
+    display: none;
+}
+
+/*places the navigation bar to the side and gives it its dimensions*/
+#sideNav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*gives a padding to the elements inside the nav bar*/
+#sideNav .insideContainer{
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+/*logo size*/
+#logo{
+    width: 180px;
+}
+
+/*off-sets the catergories and removes the bullet points*/
+#sideNav .insideContainer ul{
+    list-style: none;
+    margin-left: 20px;
+}
+
+/*makes the a tag have the half-rounded edge and separated them*/
+#sideNav .insideContainer a{
+    display: block;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 10px;
+    margin-bottom: 2px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: rgba(0, 0, 0, 0.02);
+    color: gray;
+    transition: 0.1s;
+}
+
+/*button hover effect*/
+#sideNav .insideContainer a:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 1.2em;
+}
+
+/*highlights selected tag/page*/
+#sideNav .insideContainer a.active{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #093B93;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/*the word category*/
+#homeNavTag1, #commonNavTag4, #mapLabel1{
+    color:  #093B93;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-bottom: 1px solid  #093B93;
+    margin-bottom: 15px;
+}
+
+/*lowers the buttons used for language selection*/
+.innerCookie{
+    position: relative;
+    top: 50px;
+}
+
+/*makes the buttons more button looking*/
+.innerCookie button{
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: 0.1s;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/*highlights the button when you hover on the language selection form*/
+.innerCookie button:hover{
+    height: 45px;
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------TOP SEARCH BAR---------------------------------- */
+/*news search bar*/
+#topSearch{
+    position: absolute;
+    top: 0;
+    left: 20%;
+    height: 10%;
+    width: 80%;
+}
+/*adds style to the search bar*/
+#topSearch input{
+    margin-top: 15px;
+    font-size: 1.05em;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+/*adds the magnigying icon to the search bar*/
+#topSearch input[type=text] {
+    width: 200px;
+    border: 2px solid #ccc;
+    background-image: url('../media/searchIcon.png');
+    background-position: 2px 0; 
+    background-size: 35px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /*when search is clicked, the input stretches*/
+  #topSearch input[type=text]:focus {
+    width: 50%;
+  }
+
+
+/* ----------------------------------NEWS FEED---------------------------------- */
+#bodyContent .mainNewsContainer{
+    position: relative;
+    top: 10%;
+    left: 20%;
+    width: 65%;
+    height: 90%;
+    border-radius: 10px 10px 0 0;
+    background-color: red;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#newsWording{
+    color: #093B93;
+    font-size: 1.75em;
+    border-bottom: 2px solid #093B93;
+    margin: 10px 0 0 20px;
+}
+
+#bodyContent .mainNewsContainer .highlight{
+    width: 60%;
+    height: 45%;
+    margin: 8px;
+    display: inline-block;
+    overflow: hidden;
+    background-color: black;
+}
+
+#bodyContent .mainNewsContainer .newsArticle{
+    width: 30%;
+    height: 45%;
+    margin: 8px;
+    display: inline-block;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: black;
+}
+
+#bodyContent .mainNewsContainer .newsArticle img{
+    height: 25%;
+}
+
+#bodyContent .mainNewsContainer .newsArticle:hover{
+    width: 32%;
+    height: 47%;
+    margin: 0;
+}
+
+/* --------------------------------950PX WIDE SCREENS-------------------------------- */
+@media screen and (max-width: 950px) {
+    /*shinks the nav bar a it*/
+    #sideNav .insideContainer{
+        margin-top: 8%;
+        margin-left: 8%;
+    }
+    /*shrinks the anchor tags*/
+    #sideNav .insideContainer a{
+        font-size: 1em;
+        padding: 7px 7px;
+        margin-bottom: 1px;
+    }
+    /*shrinks the logo*/
+    #logo{
+        width: 150px;
+    }
+    /*changes the side navbar from overflow hidden to scrollable*/
+    #sideNav{
+        overflow: scroll;
+    }
+    /*   Language   Form   */
+    /*makes the phrase to select a language smaller*/
+    #selectLangContainer h2{
+        font-size: 1.6em;
+        margin-bottom: 3px;
+    }
+    /*makes the language selection buttons center to the new size*/
+    #cookieForm button{
+        margin-bottom: 15px;
+        margin-left: 30%;
+    }
+    /*lowers the division inside the message container*/
+    #messageContainer{
+        margin-top: 2%;
+    }
+    /*shrinks the phrase "Keeping you Safe & Informed"*/
+    #messageContainer h2{
+        font-size: 1.85em;
+        margin-bottom: 12px;
+    }
+    /*shriks the phrase "Get Knowing"*/
+    #messageContainer p{
+        font-size: 1em;
+    }
+    .innerContainerR{
+        width: 80%;
+    }
+}
+
+/* --------------------------------450PX WIDE SCREENS-------------------------------- */
+/*PHONE SCREEN SIZE*/ 
+  @media screen and (max-width: 450px) {
+    /*makes the hamburger icon visible*/
+    .smallimg{
+        width: 7vh;
+    }
+    /*makes the hamburger icon visible and to the right of the screen*/
+    #sideNav .insideContainer a.icon {
+        display: block;
+        float: right;
+        display: inline-block;
+        position: relative;
+        top: 0;
+        right: 5%;
+    }
+    /*places the nav bar at the top*/
+    #sideNav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 15vh;
+        overflow: hidden;
+    }
+    /*hides everything in the nav bar, except the hamburger icon*/
+    #sideNav .insideContainer a, #sideNav .insideContainer p, #sideNav .insideContainer ul, #sideNav .insideContainer div{
+        display: none;
+    }
+    #sideNav .insideContainer{
+        margin-top: 1%;
+    }
+    #fullNav .languageButton:hover{
+        font-size: 1.2em;
+        letter-spacing: 2px;
+    }
+    /*places the logo at the top, left of the screen*/
+    #sideNav .insideContainer #logo{
+        margin-top: 5%;
+        width: 150px;
+        float: left;
+        display: inline-block;
+    }
+
+    /*places the search below the nav bar*/
+    #topSearch{
+        position: absolute;
+        top: 13%;
+        left: 0;
+        height: 4%;
+        width: 100%;
+    }
+    /*makes the search bar 170px long*/
+    #topSearch input[type=text] {
+        width: 170px;
+    }
+      
+    /*when search is clicked, the input stretches*/
+    #topSearch input[type=text]:focus {
+        width: 97%;
+    }
+
+    #bodyContent article{
+        position: relative;
+        top: 22%;
+        left: 0;
+    }
+
+    /*LANGUAGE SELECTION FORM*/
+    #selectLangContainer{
+        width: 100%;
+    }
+    #selectLangContainer .innerContainer{
+        margin-top: 15%;
+        margin-left: 4%;
+        font-size: 1em;
+        width: 90%;
+    }
+    #messageContainer{
+        display: none;
+    }
+}
