@@ -260,7 +260,6 @@ function mapMayaBody(){
 
 /* --------------------------------------LOAD NEWS CONTENT LANGUAGE-------------------------------------- */
 function loadEnglish(){
-    alert("english");
 }
 
 function loadSpanish(){
